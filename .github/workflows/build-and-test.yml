@@ -19,13 +19,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        framework: [net5.0]
+        framework: [net5.0, net6.0]
 
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: restore (Base sln)
+    - name: restore
       run: dotnet restore ./TestProject1.sln
 
     - name: Build
@@ -33,5 +33,4 @@ jobs:
 
     - name: Test
       id: test1
-      continue-on-error: true
       run: dotnet test ./TestProject1.sln --framework ${{ matrix.framework }} --logger:"console;verbosity=detailed"
