@@ -3,5 +3,5 @@
 ################################################################################
 
 /.vs
-/TestProject1/bin/Debug/net5.0
+/TestProject1/bin
 /TestProject1/obj
